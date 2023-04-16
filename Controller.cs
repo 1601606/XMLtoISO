@@ -1,2 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+namespace XMLtoISO {
+
+   
+public class Controller
+    {
+        XMLtoISO xmltoiso;
+        View view;
+
+        public Controller() {
+        
+            view=new View();
+            xmltoiso=new XMLtoISO();
+           
+        }
+        
+    }
+
+
+
+}
