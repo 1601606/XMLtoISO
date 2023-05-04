@@ -6,6 +6,7 @@ namespace XMLtoISO {
 public class Controller
     {
         XMLtoISO xmltoiso;
+        Entrada entrada;
         View view;
 
         public Controller() {

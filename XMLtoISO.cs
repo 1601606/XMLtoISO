@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.IO;
 using System.Globalization;
+using Newtonsoft.Json;
+
 
 namespace XMLtoISO
 {
@@ -55,19 +57,27 @@ namespace XMLtoISO
 
 
             }
+            void SeletorFicheiro(){
+                
+                StreamReader pontoxml = new StreamReader("DOC.XML");
+                string leitor=pontoxml.ReadLine();
+                pontoxml.Close();
+            
+            };
             void eletrodo()
             {
                 string X, Y, Z, C, GAP;
                 string A, B, CC, D, E;
                 //decimal AA, BB, CCC, DD, EE;
-
-
+                Entrada entrada;
+                entrada = new Entrada();
 
                 Console.WriteLine("Um produto de SimProgramming");
                 Console.WriteLine("Equipa3");
                 Console.WriteLine("XMLtoISO");
                 Console.WriteLine("Máquinas ONA H400 e H600");
                 Console.WriteLine("Preparação de comando numérico.");
+                Console.WriteLine(entrada.doc);
                 Console.WriteLine();
                 Console.WriteLine("Inserir numero de eletrodo (Exemplo:1E100)");
                 string TE = Console.ReadLine();
@@ -110,7 +120,7 @@ namespace XMLtoISO
                 //modificar semantica para as variaveis, nao podem ter valores NULL
                 //utilizar trycatch
 
-                //preparar entrada de variaveis atraves de objeto convertido de CSV para JSON
+                //preparar entrada de variaveis atraves de objeto convertido de XML para JSON
 
                 StreamWriter escritor = new StreamWriter("1.PRG");
                 escritor.WriteLine("ID0000TX0101%");
